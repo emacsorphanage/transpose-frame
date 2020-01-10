@@ -217,7 +217,7 @@ Omitting FRAME means currently selected frame."
   (interactive)
   (transpose-frame-set-arrangement (transpose-frame-get-arrangement frame) frame
                                    'transpose)
-  (if (interactive-p) (recenter)))
+  (when (called-interactively-p 'any) (recenter)))
 
 ;;;###autoload
 (defun flip-frame (&optional frame)
@@ -250,7 +250,7 @@ Omitting FRAME means currently selected frame."
   (interactive)
   (transpose-frame-set-arrangement (transpose-frame-get-arrangement frame) frame
                                    'transpose 'flop)
-  (if (interactive-p) (recenter)))
+  (when (called-interactively-p 'any) (recenter)))
 
 ;;;###autoload
 (defun rotate-frame-anticlockwise (&optional frame)
@@ -259,9 +259,7 @@ Omitting FRAME means currently selected frame."
   (interactive)
   (transpose-frame-set-arrangement (transpose-frame-get-arrangement frame) frame
                                    'transpose 'flip)
-  (if (interactive-p) (recenter)))
+  (when (called-interactively-p 'any) (recenter)))
 
 (provide 'transpose-frame)
-
-;;;
 ;;; transpose-frame.el ends here
