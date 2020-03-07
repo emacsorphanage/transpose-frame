@@ -228,5 +228,8 @@ Omitting FRAME means currently selected frame."
   (when (called-interactively-p 'any) (recenter)))
 
 ;;; _
+;; Local Variables:
+;; indent-tabs-mode: nil
+;; End:
 (provide 'transpose-frame)
 ;;; transpose-frame.el ends here
