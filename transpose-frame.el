@@ -97,8 +97,7 @@
 ;; This program is tested on GNU Emacs 22, 23.
 
 ;;; Code:
-
-;; Internal functions
+;;; Internal functions
 
 (defun transpose-frame-get-arrangement (&optional frame subtree)
   (let ((tree (or subtree
@@ -175,7 +174,7 @@
         (apply 'transpose-frame-set-arrangement
                (caar config) window how)))))
 
-;; User commands
+;;; User commands
 
 ;;;###autoload
 (defun transpose-frame (&optional frame)
@@ -228,5 +227,6 @@ Omitting FRAME means currently selected frame."
                                    'transpose 'flip)
   (when (called-interactively-p 'any) (recenter)))
 
+;;; _
 (provide 'transpose-frame)
 ;;; transpose-frame.el ends here
