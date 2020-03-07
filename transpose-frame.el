@@ -146,12 +146,12 @@
           (apply 'set-window-fringes window (pop config))
           (set-window-dedicated-p window (pop config))
           (set-window-redisplay-end-trigger window (pop config))
-          (let ((orig-window (pop config))
-                (ol-func (lambda (ol)
-                           (if (eq (overlay-get ol 'window) orig-window)
-                               (overlay-put ol 'window window))))
-                (ol-lists (with-current-buffer buffer
-                            (overlay-lists))))
+          (let* ((orig-window (pop config))
+                 (ol-func (lambda (ol)
+                            (when (eq (overlay-get ol 'window) orig-window)
+                              (overlay-put ol 'window window))))
+                 (ol-lists (with-current-buffer buffer
+                             (overlay-lists))))
             (mapc ol-func (car ol-lists))
             (mapc ol-func (cdr ol-lists)))
           (if (car config) (select-window window)))
