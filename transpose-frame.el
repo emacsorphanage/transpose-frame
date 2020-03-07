@@ -3,10 +3,7 @@
 ;; Copyright (c) 2011  S. Irie
 
 ;; Author: S. Irie
-;; Maintainer: S. Irie
 ;; Keywords: window
-
-(defconst transpose-frame-version "0.1.0")
 
 ;; This program is free software.
 
@@ -98,36 +95,6 @@
 ;;        +-------------------------+      +-----------------+-------+
 ;;
 ;; This program is tested on GNU Emacs 22, 23.
-
-;;
-;; Installation:
-;;
-;; First, save this file as transpose-frame.el and byte-compile in a directory
-;; that is listed in load-path.
-;;
-;; Put the following in your .emacs file:
-;;
-;;   (require 'transpose-frame)
-;;
-;; To swap x-direction and y-direction of windows arrangement, for example,
-;; just type as:
-;;
-;;   M-x transpose-frame
-;;
-;; Have fun!
-;;
-
-;;; ChangeLog:
-
-;; 2011-03-01  S. Irie
-;;        * Version 0.1.0
-;;        * Save more information such as hscroll, margins, fringes, etc.
-;;        * Bug fix
-;; 2011-02-28  S. Irie
-;;        * Version 0.0.1
-;;        * Initial version
-
-;;; ToDo:
 
 ;;; Code:
 
