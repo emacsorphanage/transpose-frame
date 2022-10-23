@@ -110,7 +110,6 @@
               (window-margins tree)
               (window-fringes tree)
               (window-dedicated-p tree)
-              (jit-lock-register tree)
               tree
               (eq tree (frame-selected-window frame)))
       (let* ((vertical (car tree))
@@ -145,7 +144,6 @@
           (set-window-margins window (caar config) (cdr (pop config)))
           (apply 'set-window-fringes window (pop config))
           (set-window-dedicated-p window (pop config))
-          (jit-lock-register window (pop config))
           (let* ((orig-window (pop config))
                  (ol-func (lambda (ol)
                             (when (eq (overlay-get ol 'window) orig-window)
